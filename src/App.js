@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      movieData
+      allMovies: movieData.movies
     }
   }
 
@@ -19,6 +19,7 @@ class App extends React.Component {
       <main className='App'>
         <h1>Rancid Tomatillos</h1>
         <Header />
+        <Movies movies={this.state.allMovies}/>
       </main>
     );
   }
