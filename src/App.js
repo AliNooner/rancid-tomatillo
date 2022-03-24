@@ -9,12 +9,16 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      
+
     }
   }
 
   render() {
     return (
+      <main className='App'>
+        <h1>Rancid Tomatillos</h1>
+        <Header />
+      </main>
       // <div className="App">
       //   <header className="App-header">
       //     <img src={logo} className="App-logo" alt="logo" />
