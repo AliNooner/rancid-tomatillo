@@ -5,7 +5,7 @@ const MovieCard = ({title, poster, id}) => {
   return (
     <div className="movie-card">
       <h3>{title}</h3>
-      <p>{poster}</p>
+      <img className="poster-img" src={poster}/>
       <button>BUTTON</button>
     </div>
   )
