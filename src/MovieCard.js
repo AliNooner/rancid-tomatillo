@@ -6,7 +6,7 @@ const MovieCard = ({title, poster, id}) => {
     <div className="movie-card">
       <h3>{title}</h3>
       <img className="poster-img" src={poster}/>
-      <button>BUTTON</button>
+      <button className="poster-button">Check me out!</button>
     </div>
   )
 }

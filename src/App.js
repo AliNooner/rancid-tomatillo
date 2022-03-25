@@ -17,7 +17,7 @@ class App extends React.Component {
   render() {
     return (
       <main className='App'>
-        <h1>Rancid Tomatillos</h1>
+        <h1>🍅 Rancid Tomatillos 🍅</h1>
         <Header />
         <Movies movies={this.state.allMovies}/>
       </main>
