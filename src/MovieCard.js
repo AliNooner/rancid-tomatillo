@@ -1,5 +1,4 @@
 import React from "react";
-import SingleMovieCard from "./SingleMovieCard";
 import "./MovieCard.css";
 
 const MovieCard = ({ title, poster, id, isSingleMovie, displayMovieInfo}) => {

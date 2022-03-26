@@ -1,5 +1,4 @@
 import React from "react";
-// import logo from './logo.svg';
 import './App.css';
 import Header from "./Header";
 import Movies from "./Movies";
@@ -20,8 +19,7 @@ class App extends React.Component {
   const singleMovieDetails = this.state.allMovies.find((movie) => {
     return movie.id === id;
   })
-  this.setState({ isSingleMovie: true })
-  this.setState({ singleMovie: singleMovieDetails })
+    this.setState({ isSingleMovie: true, singleMovie: singleMovieDetails })
 }
 
   hideSingleView = () => {

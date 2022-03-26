@@ -1,7 +1,5 @@
 import React from "react";
 import "./SingleMovieCard.css";
-// import MovieCard from "./MovieCard";
-// import Movies from "./Movies";
 
 const SingleMovieCard = ({ singleMovie, hideSingleView, displayMovieInfo}) => {
   return (
