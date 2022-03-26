@@ -1,5 +1,6 @@
 import React from "react";
 import MovieCard from "./MovieCard";
+import SingleMovieCard from "./SingleMovieCard";
 import "./Movies.css";
 
 
