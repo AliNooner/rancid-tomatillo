@@ -1,12 +1,11 @@
 import React from "react";
 import "./MovieCard.css";
 
-const MovieCard = ({title, poster, id}) => {
+const MovieCard = ({ title, poster, id, isSingleMovie, displayMovieInfo}) => {
   return (
     <div className="movie-card">
       <h3>{title}</h3>
-      <img className="poster-img" src={poster}/>
-      <button className="poster-button">Check me out!</button>
+      <img className="poster-img" src={poster} alt={title} onClick={() => displayMovieInfo(id)}/>
     </div>
   )
 }

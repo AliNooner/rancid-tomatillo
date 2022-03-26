@@ -20,7 +20,7 @@ class Header extends React.Component {
           onChange = {event => this.handleChange(event)}
       />
 
-        <button onClick = {event => this.submitIdea(event)}>SEARCH</button>
+        <button className="search-button" onClick = {event => this.submitIdea(event)}>SEARCH</button>
       </form>
     )
   }

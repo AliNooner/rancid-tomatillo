@@ -3,8 +3,8 @@ import MovieCard from "./MovieCard";
 import "./Movies.css";
 
 
-const Movies = ({movies}) => {
-console.log(movies)
+const Movies = ({ movies, displayMovieInfo}) => {
+// console.log(movies)
   const movieCards = movies.map(movie => {
     return (
       <MovieCard
@@ -12,6 +12,7 @@ console.log(movies)
         poster={movie.poster_path}
         id={movie.id}
         key={movie.id}
+        displayMovieInfo={displayMovieInfo}
       />
     )
   })

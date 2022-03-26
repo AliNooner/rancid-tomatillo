@@ -1,0 +1,15 @@
+import React from "react";
+import "./SingleMovieCard.css";
+
+const SingleMovieCard = ({ singleMovie, hideSingleView, displayMovieInfo}) => {
+  return (
+    <div className="single-movie-card">
+      <button className="x-button" onClick={() => hideSingleView()}>X</button>
+      <h1>{singleMovie.title}</h1>
+      <img className="backdrop-poster-img" src={singleMovie.backdrop_path} alt={singleMovie.title}/>
+      <h3>Release Date: {singleMovie.release_date}</h3>
+    </div>
+  )
+}
+
+export default SingleMovieCard;
