@@ -16,13 +16,17 @@ class App extends React.Component {
     }
   }
 
-displayMovieInfo = (id) => {
+  displayMovieInfo = (id) => {
   const singleMovieDetails = this.state.allMovies.find((movie) => {
     return movie.id === id;
   })
-  this.setState({ isSingleMovie: true})
-  this.setState({singleMovie: singleMovieDetails})
+  this.setState({ isSingleMovie: true })
+  this.setState({ singleMovie: singleMovieDetails })
 }
+
+  hideSingleView = () => {
+    this.setState({ isSingleMovie: false })
+  }
 
   render() {
     return (
@@ -30,7 +34,7 @@ displayMovieInfo = (id) => {
         <h1>🍅 Rancid Tomatillos 🍅</h1>
         <Header />
         {!this.state.isSingleMovie && <Movies movies={this.state.allMovies} displayMovieInfo={this.displayMovieInfo}/>}
-        {this.state.isSingleMovie && <SingleMovieCard movie={this.state.singleMovie} displayMovieInfo={this.displayMovieInfo} singleMovie={this.state.singleMovie}/>}
+        {this.state.isSingleMovie && <SingleMovieCard movie={this.state.singleMovie} displayMovieInfo={this.displayMovieInfo} hideSingleView={this.hideSingleView}singleMovie={this.state.singleMovie}/>}
       </main>
     );
   }

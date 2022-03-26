@@ -3,10 +3,10 @@ import "./SingleMovieCard.css";
 // import MovieCard from "./MovieCard";
 // import Movies from "./Movies";
 
-const SingleMovieCard = ({ singleMovie, displayMovieInfo}) => {
+const SingleMovieCard = ({ singleMovie, hideSingleView, displayMovieInfo}) => {
   return (
     <div className="single-movie-card">
-      <button className="x-button">X</button>
+      <button className="x-button" onClick={() => hideSingleView()}>X</button>
       <h1>{singleMovie.title}</h1>
       <img className="backdrop-poster-img" src={singleMovie.backdrop_path} alt={singleMovie.title}/>
       <h3>Release Date: {singleMovie.release_date}</h3>
