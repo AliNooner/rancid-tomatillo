@@ -4,15 +4,22 @@ import Header from "./Header";
 import Movies from "./Movies";
 import movieData from './data';
 import SingleMovieCard from "./SingleMovieCard";
+import allMoviesData from './APIcalls';
+
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      allMovies: movieData.movies,
+      allMovies: [],
       isSingleMovie: false,
-      singleMovie: ''
+      singleMovie: '',
+      error: ''
     }
+  }
+
+  componentDidMount = () => {
+    return allMoviesData().then(data => this.setState({allMovies: data.movies})).catch(error => this.setState({error: 'Oops! Something went wrong!'}))
   }
 
   displayMovieInfo = (id) => {
