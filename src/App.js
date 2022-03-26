@@ -2,7 +2,6 @@ import React from "react";
 import './App.css';
 import Header from "./Header";
 import Movies from "./Movies";
-import movieData from './data';
 import SingleMovieCard from "./SingleMovieCard";
 import allMoviesData from './APIcalls';
 
