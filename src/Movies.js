@@ -4,7 +4,6 @@ import "./Movies.css";
 
 
 const Movies = ({ movies, displayMovieInfo}) => {
-// console.log(movies)
   const movieCards = movies.map(movie => {
     return (
       <MovieCard
