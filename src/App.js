@@ -25,14 +25,6 @@ class App extends React.Component {
   }
 
 
-  // displayMovieInfo = (id) => {
-  // const singleMovieDetails = this.state.allMovies.find((movie) => {
-  //   return movie.id === id;
-  // })
-  //   this.setState({ isSingleMovie: true, singleMovie: singleMovieDetails })
-    // return singleMovieData(id).then(data => this.setState({isSingleMovie: true, singleMovie: data.movie}))
-// }
-
 displayMovieInfo = (id) => {
   return singleMovieData(id)
   .then(data => this.setState({isSingleMovie: true, singleMovie: data.movie}))
