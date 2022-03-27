@@ -10,11 +10,17 @@ const SingleMovieCard = ({ singleMovie, hideSingleView, displayMovieInfo}) => {
       <h3>Release Date: {singleMovie.release_date}</h3>
       <h2>Overview: {singleMovie.overview}</h2>
       <h2>Genre: {singleMovie.genres.join(', ')}</h2>
-      <h2>Budget: {singleMovie.budget}</h2>
-      <h2>Revenue: {singleMovie.revenue}</h2>
-      <h2>Runtime: {singleMovie.runtime}</h2>
+      <h2>Budget: {singleMovie.budget.toLocaleString('en-US', {
+  style: 'currency',
+  currency: 'USD',
+})}</h2>
+      <h2>Revenue: {singleMovie.revenue.toLocaleString('en-US', {
+  style: 'currency',
+  currency: 'USD',
+})}</h2>
+      <h2>Runtime: {singleMovie.runtime} minutes</h2>
       <h2>Tagline: {singleMovie.tagline}</h2>
-      <h2>Average Rating: {singleMovie.average_rating}</h2>
+      <h2>Average Rating: {Math.round(singleMovie.average_rating)}</h2>
     </div>
   )
 }
