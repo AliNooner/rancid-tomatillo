@@ -9,7 +9,7 @@ const SingleMovieCard = ({ singleMovie, hideSingleView, displayMovieInfo}) => {
       <img className="backdrop-poster-img" src={singleMovie.backdrop_path} alt={singleMovie.title}/>
       <h3>Release Date: {singleMovie.release_date}</h3>
       <h2>Overview: {singleMovie.overview}</h2>
-      <h2>Genre: {singleMovie.genre}</h2>
+      <h2>Genre: {singleMovie.genres.join(', ')}</h2>
       <h2>Budget: {singleMovie.budget}</h2>
       <h2>Revenue: {singleMovie.revenue}</h2>
       <h2>Runtime: {singleMovie.runtime}</h2>

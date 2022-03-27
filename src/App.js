@@ -19,15 +19,23 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    return allMoviesData().then(data => this.setState({allMovies: data.movies})).catch(error => this.setState({error: 'Oops! Something went wrong!'}))
+    return allMoviesData()
+    .then(data => this.setState({allMovies: data.movies}))
+    .catch(error => this.setState({error: 'Oops! Something went wrong!'}))
   }
 
-  displayMovieInfo = (id) => {
-  const singleMovieDetails = this.state.allMovies.find((movie) => {
-    return movie.id === id;
-  })
-    this.setState({ isSingleMovie: true, singleMovie: singleMovieDetails })
-    // singleMovieData(id).then(data => this.setState({singleMovieOverview: data.movie}))
+
+  // displayMovieInfo = (id) => {
+  // const singleMovieDetails = this.state.allMovies.find((movie) => {
+  //   return movie.id === id;
+  // })
+  //   this.setState({ isSingleMovie: true, singleMovie: singleMovieDetails })
+    // return singleMovieData(id).then(data => this.setState({isSingleMovie: true, singleMovie: data.movie}))
+// }
+
+displayMovieInfo = (id) => {
+  return singleMovieData(id)
+  .then(data => this.setState({isSingleMovie: true, singleMovie: data.movie}))
 }
 
   hideSingleView = () => {
@@ -40,7 +48,7 @@ class App extends React.Component {
         <h1>🍅 Rancid Tomatillos 🍅</h1>
         <Header />
         {!this.state.isSingleMovie && <Movies movies={this.state.allMovies} displayMovieInfo={this.displayMovieInfo}/>}
-        {this.state.isSingleMovie && <SingleMovieCard movie={this.state.singleMovie} displayMovieInfo={this.displayMovieInfo} hideSingleView={this.hideSingleView} singleMovie={this.state.singleMovie} singleMovieOverview={this.state.singleMovieOverview} />}
+        {this.state.isSingleMovie && <SingleMovieCard  displayMovieInfo={this.displayMovieInfo} hideSingleView={this.hideSingleView} singleMovie={this.state.singleMovie} />}
       </main>
     );
   }
