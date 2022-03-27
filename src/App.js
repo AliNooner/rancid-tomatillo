@@ -2,24 +2,32 @@ import React from "react";
 import './App.css';
 import Header from "./Header";
 import Movies from "./Movies";
-import movieData from './data';
 import SingleMovieCard from "./SingleMovieCard";
+import {allMoviesData, singleMovieData} from './APIcalls';
+
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      allMovies: movieData.movies,
+      allMovies: [],
       isSingleMovie: false,
-      singleMovie: ''
+      singleMovie: '',
+      // singleMovieOverview: '',
+      error: ''
     }
   }
 
-  displayMovieInfo = (id) => {
-  const singleMovieDetails = this.state.allMovies.find((movie) => {
-    return movie.id === id;
-  })
-    this.setState({ isSingleMovie: true, singleMovie: singleMovieDetails })
+  componentDidMount = () => {
+    return allMoviesData()
+    .then(data => this.setState({allMovies: data.movies}))
+    .catch(error => this.setState({error: 'Oops! Something went wrong!'}))
+  }
+
+
+displayMovieInfo = (id) => {
+  return singleMovieData(id)
+  .then(data => this.setState({isSingleMovie: true, singleMovie: data.movie}))
 }
 
   hideSingleView = () => {
@@ -32,7 +40,7 @@ class App extends React.Component {
         <h1>🍅 Rancid Tomatillos 🍅</h1>
         <Header />
         {!this.state.isSingleMovie && <Movies movies={this.state.allMovies} displayMovieInfo={this.displayMovieInfo}/>}
-        {this.state.isSingleMovie && <SingleMovieCard movie={this.state.singleMovie} displayMovieInfo={this.displayMovieInfo} hideSingleView={this.hideSingleView}singleMovie={this.state.singleMovie}/>}
+        {this.state.isSingleMovie && <SingleMovieCard  displayMovieInfo={this.displayMovieInfo} hideSingleView={this.hideSingleView} singleMovie={this.state.singleMovie} />}
       </main>
     );
   }
