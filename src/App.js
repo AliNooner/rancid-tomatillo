@@ -13,7 +13,7 @@ class App extends React.Component {
       allMovies: [],
       isSingleMovie: false,
       singleMovie: '',
-      // singleMovieOverview: '',
+      hasError: false,
       error: ''
     }
   }
@@ -21,14 +21,14 @@ class App extends React.Component {
   componentDidMount = () => {
     return allMoviesData()
     .then(data => this.setState({allMovies: data.movies}))
-    .catch(error => this.setState({error: 'Oops! Something went wrong!'}))
+      .catch(error => this.setState({hasError: true, error: `Oops! Something went wrong!`}))
   }
 
-
-displayMovieInfo = (id) => {
-  return singleMovieData(id)
-  .then(data => this.setState({isSingleMovie: true, singleMovie: data.movie}))
-}
+  displayMovieInfo = (id) => {
+    return singleMovieData(id)
+    .then(data => this.setState({isSingleMovie: true, singleMovie: data.movie}))
+      .catch(error => this.setState({hasError: true, error: `Oops! Something went wrong!`}))
+  }
 
   hideSingleView = () => {
     this.setState({ isSingleMovie: false })
@@ -41,6 +41,7 @@ displayMovieInfo = (id) => {
         <Header />
         {!this.state.isSingleMovie && <Movies movies={this.state.allMovies} displayMovieInfo={this.displayMovieInfo}/>}
         {this.state.isSingleMovie && <SingleMovieCard  displayMovieInfo={this.displayMovieInfo} hideSingleView={this.hideSingleView} singleMovie={this.state.singleMovie} />}
+        {this.state.hasError && <h1>{this.state.error}</h1>}
       </main>
     );
   }

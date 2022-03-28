@@ -8,11 +8,4 @@ const singleMovieData = (id) => {
   .then(response => response.json())
 }
 
-
-
-
-
-
-
-
 export {allMoviesData, singleMovieData};
