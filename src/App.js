@@ -4,6 +4,7 @@ import Header from "./Header";
 import Movies from "./Movies";
 import SingleMovieCard from "./SingleMovieCard";
 import {allMoviesData, singleMovieData} from './APIcalls';
+import {Route} from 'react-router-dom';
 
 
 class App extends React.Component {
@@ -34,17 +35,31 @@ class App extends React.Component {
     this.setState({ isSingleMovie: false })
   }
 
-  render() {
+    render() {
     return (
       <main className='App'>
         <h1 className = 'title'>🍅 Rancid Tomatillos 🍅</h1>
         <Header />
-        {!this.state.isSingleMovie && <Movies movies={this.state.allMovies} displayMovieInfo={this.displayMovieInfo}/>}
+        <Route path="/" render={() => <Movies movies={this.state.allMovies} displayMovieInfo={this.displayMovieInfo}/>} />
+        {/* // <Route path="/puppies" render={() => <Creatures name="puppies" data={puppies} />} /> */}
         {this.state.isSingleMovie && <SingleMovieCard  displayMovieInfo={this.displayMovieInfo} hideSingleView={this.hideSingleView} singleMovie={this.state.singleMovie} />}
         {this.state.hasError && <h1>{this.state.error}</h1>}
       </main>
     );
   }
 }
+
+//   render() {
+//     return (
+//       <main className='App'>
+//         <h1 className = 'title'>🍅 Rancid Tomatillos 🍅</h1>
+//         <Header />
+//         {!this.state.isSingleMovie && <Movies movies={this.state.allMovies} displayMovieInfo={this.displayMovieInfo}/>}
+//         {this.state.isSingleMovie && <SingleMovieCard  displayMovieInfo={this.displayMovieInfo} hideSingleView={this.hideSingleView} singleMovie={this.state.singleMovie} />}
+//         {this.state.hasError && <h1>{this.state.error}</h1>}
+//       </main>
+//     );
+//   }
+// }
 
 export default App;
