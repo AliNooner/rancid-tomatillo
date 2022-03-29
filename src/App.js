@@ -37,7 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <main className='App'>
-        <h1>🍅 Rancid Tomatillos 🍅</h1>
+        <h1 className = 'title'>🍅 Rancid Tomatillos 🍅</h1>
         <Header />
         {!this.state.isSingleMovie && <Movies movies={this.state.allMovies} displayMovieInfo={this.displayMovieInfo}/>}
         {this.state.isSingleMovie && <SingleMovieCard  displayMovieInfo={this.displayMovieInfo} hideSingleView={this.hideSingleView} singleMovie={this.state.singleMovie} />}
