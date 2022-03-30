@@ -25,51 +25,17 @@ class App extends React.Component {
       .catch(error => this.setState({hasError: true, error: `Oops! Something went wrong!`}))
   }
 
-  // displayMovieInfo = (id) => {
-  //   return singleMovieData(id)
-  //   .then(data => this.setState({isSingleMovie: true, singleMovie: data.movie}))
-  //     .catch(error => this.setState({hasError: true, error: `Oops! Something went wrong!`}))
-  // }
-
-  // hideSingleView = () => {
-  //   this.setState({ isSingleMovie: false })
-  // }
-
     render() {
     return (
       <main className='App'>
         <h1 className = 'title'>🍅 Rancid Tomatillos 🍅</h1>
         <Header />
           <Route exact path="/" render={() => <Movies movies={this.state.allMovies} />} />
-          <Route exact path="/:id" render={({match}) => <SingleMovieCard id={match.params.id} />} />
-
-         {/* <Route path="/:id" render={({match}) => {
-            const currentId = parseInt(match.params.id)
-            return (
-              <SingleMovieCard id={currentId} displayMovieInfo={this.displayMovieInfo} hideSingleView={this.hideSingleView} singleMovie={this.state.singleMovie} />)
-              }} /> */}
-
-            {/* <Route path="/:movieId" element={<Page movie={this.state.singleMovie}
-            trailer={this.state.trailer} overview={this.state.movieOverview} key={this.state.singleMovie.id} />}/> */}
-
-        {/* {this.state.isSingleMovie && <SingleMovieCard  displayMovieInfo={this.displayMovieInfo} hideSingleView={this.hideSingleView} singleMovie={this.state.singleMovie} />} */}
+          <Route exact path="/:id" render={({match}) => <SingleMovieCard id={match.params.id} />} />         
         {this.state.hasError && <h1>{this.state.error}</h1>}
       </main>
     );
   }
 }
-
-//   render() {
-//     return (
-//       <main className='App'>
-//         <h1 className = 'title'>🍅 Rancid Tomatillos 🍅</h1>
-//         <Header />
-//         {!this.state.isSingleMovie && <Movies movies={this.state.allMovies} displayMovieInfo={this.displayMovieInfo}/>}
-//         {this.state.isSingleMovie && <SingleMovieCard  displayMovieInfo={this.displayMovieInfo} hideSingleView={this.hideSingleView} singleMovie={this.state.singleMovie} />}
-//         {this.state.hasError && <h1>{this.state.error}</h1>}
-//       </main>
-//     );
-//   }
-// }
 
 export default App;
