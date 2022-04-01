@@ -2,11 +2,22 @@ import React from "react";
 import "./Header.css";
 
 class Header extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      title: ''
+      input: ''
     }
+  }
+
+  handleChange = (e) => {
+    this.setState({input: e.target.value}, () => {
+      this.props.filteredSearch(e.target.value)
+    });
+  }
+
+  submitSearch = (e) => {
+    e.preventDefault();
+    this.props.filteredSearch(this.state.input)
   }
 
   render() {
@@ -15,12 +26,12 @@ class Header extends React.Component {
         <input
           type='text'
           placeholder='Search title here'
-          name='title'
-          value={this.state.title}
+          name='search'
+          value={this.state.input}
           onChange = {event => this.handleChange(event)}
       />
 
-        <button className="search-button" onClick = {event => this.submitIdea(event)}>SEARCH</button>
+        <button className="search-button" onClick = {this.submitSearch}>SEARCH</button>
       </form>
     )
   }
