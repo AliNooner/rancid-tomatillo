@@ -11,7 +11,6 @@ const Movies = ({ movies }) => {
         poster={movie.poster_path}
         id={movie.id}
         key={movie.id}
-        // displayMovieInfo={displayMovieInfo}
       />
     )
   })
