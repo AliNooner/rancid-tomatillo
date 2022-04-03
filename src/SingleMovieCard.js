@@ -71,7 +71,6 @@ class SingleMovieCard extends React.Component {
       <div>
         <Link to="/" ><button className="x-button">X</button></Link>
         {singleMovieDetails}
-        {/* {this.state.error} */}
       </div>
     )
   }
