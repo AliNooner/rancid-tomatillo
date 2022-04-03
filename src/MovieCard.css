@@ -11,6 +11,8 @@
 .poster-img {
   height: 20em;
   width: 15em;
+  border-radius: 10px;
+  box-shadow: 6px 8px 10px #BABD8D;
 }
 
 h3 {

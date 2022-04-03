@@ -40,29 +40,33 @@ class SingleMovieCard extends React.Component {
         } else {
           movieGenres = this.state.movie.genres.join('');
       }
-      
+
       singleMovieDetails = (
         <div className="single-movie-card">
-          <h1>{this.state.movie.title}</h1>
+        <section className="title-card">
           <img
             className="backdrop-poster-img"
             src={this.state.movie.backdrop_path}
             alt={this.state.movie.title}
           />
-          <h3>Release Date: {releaseDate}</h3>
-          <h2>Overview: {this.state.movie.overview}</h2>
-          <h2>Genre: {movieGenres}</h2>
-          <h2>
-            Budget:{" "}
-            {movieBudget}
-          </h2>
-          <h2>
-            Revenue:{" "}
-            {movieRevenue}
-          </h2>
-          <h2>Runtime: {this.state.movie.runtime} minutes</h2>
-          <h2>Tagline: {this.state.movie.tagline}</h2>
-          <h2>Average Rating: {Math.round(this.state.movie.average_rating)}/10</h2>
+          </section>
+          <section className="detail-container">
+          <h1>{this.state.movie.title}</h1>
+            <h3>Release Date: {releaseDate}</h3>
+            <h2>Overview: {this.state.movie.overview}</h2>
+            <h2>Genre: {movieGenres}</h2>
+            <h2>
+              Budget:{" "}
+              {movieBudget}
+              </h2>
+              <h2>
+              Revenue:{" "}
+              {movieRevenue}
+            </h2>
+            <h2>Runtime: {this.state.movie.runtime} minutes</h2>
+            <h2>Tagline: {this.state.movie.tagline}</h2>
+            <h2>Average Rating: {Math.round(this.state.movie.average_rating)}/10</h2>
+          </section>
         </div>
       )
   }
