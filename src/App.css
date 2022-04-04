@@ -46,3 +46,9 @@ h1 {
 }
 
 a:link { text-decoration: none; }
+
+@media screen and (max-width: 525px) {
+  .title {
+    font-size: 30px;
+}
+}
