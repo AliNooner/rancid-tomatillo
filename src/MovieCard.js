@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./MovieCard.css";
 
-const MovieCard = ({ title, poster, id}) => {
+const MovieCard = ({ title, poster, id }) => {
   return (
     <Link to={`/${id}`}>
       <div id={id} className="movie-card">
@@ -10,7 +10,7 @@ const MovieCard = ({ title, poster, id}) => {
         <img className="poster-img" src={poster} alt={title} />
       </div>
     </Link>
-  )
-}
+  );
+};
 
 export default MovieCard;
