@@ -4,3 +4,34 @@
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
 }
+
+@media screen and (min-width: 55em) {
+  .movie-container {
+		grid-template-columns: 20% 20% 20% 20% 20%;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+  .movie-container {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .movie-container {
+    grid-template-columns: 33% 33% 33%;
+  }
+}
+
+@media screen and (max-width: 730px) {
+	.movie-container {
+		grid-template-columns: 50% 50%;
+	}
+}
+
+@media screen and (max-width: 525px) {
+	.movie-container {
+		text-align: center;
+		grid-template-columns: 100%;
+	}
+}
