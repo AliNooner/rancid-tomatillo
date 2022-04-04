@@ -5,12 +5,6 @@
 }
 
 .backdrop-poster-img {
-  /* height: 40em;
-  width: 70em;
-  radius: 5px; */
-  /* height: 100%; */
-  /* opacity: 0.4; */
-
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -38,7 +32,6 @@
   z-index: 10;
   height: 50%;
   width: 30%;
-  /* background-color: black; */
   background: rgba(0, 0, 0, 0.7);
   border-radius: 5%;
   box-shadow: 6px 8px 10px #BABD8D;
@@ -48,8 +41,6 @@
   display: flex;
   flex-direction: center;
   justify-content: center;
-  /* align-items: center; */
-  /* padding-left: 40%; */
   margin-left: 200px;
 }
 
@@ -64,11 +55,9 @@ h2 {
     margin: 5px;
     width: 4%;
     height: 25px;
-    /* border: 2px; */
     border-radius: 40px;
     font-size: 10px;
     box-shadow: 3px 4px 5px #babd8d;
     background-color: transparent;
     color: white;
-    /* padding-bottom: 20px; */
 }
