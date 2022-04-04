@@ -68,5 +68,7 @@ h2 {
     border-radius: 40px;
     font-size: 10px;
     box-shadow: 3px 4px 5px #babd8d;
+    background-color: transparent;
+    color: white;
     /* padding-bottom: 20px; */
 }
