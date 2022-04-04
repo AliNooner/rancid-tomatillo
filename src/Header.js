@@ -30,16 +30,14 @@ class Header extends React.Component {
   render() {
     return (
       <form>
-        <input
+        <input className="input-field"
           type='text'
           placeholder='Search title here'
           name='search'
           value={this.state.input}
           onChange = {event => this.handleChange(event)}/>
         <button className="search-button" onClick = {this.submitSearch}>SEARCH</button>
-        <div>
-          <Link to="/" ><button className="home-button" onClick = {this.clearForm}>RETURN HOME</button></Link>
-        </div>
+        <Link to="/" ><button className="home-button" onClick = {this.clearForm}>HOME</button></Link>
       </form>
     )
   }
