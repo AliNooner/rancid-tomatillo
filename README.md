@@ -46,7 +46,7 @@ Responsive Design:
 
 ## Deployed Page
 
-Visit our deployed [Rancid Tomatillos!](https://nooner-sotelo-rancid-tomatillos.surge.sh/)
+Visit our deployed [Rancid Tomatillos!](https://rancid-tomatillos-project-nooner-sotelo.surge.sh/)
 
 
 ## Wins
